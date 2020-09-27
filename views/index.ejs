@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Socket.IO chat</title>
+    <!--link css styles-->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <div id="conservation">
+      <h2>Conversation</h2>
+      <ul id="messages"></ul>
+      <form action="">
+        <input id="inputMessage" autocomplete="off"/><button id="sendMessage">Send</button>
+      </form>   
+    </div>
+    <aside>
+      <h2>Member</h2>
+      <input type="text" autocomplete="off" id="userName" name="username" placeholder="Enter name...">
+      <button type="submit" id="buttonSetUser" onclick="setUser()">Set User</button>
+      <ul id="ulist"></ul>
+    </aside>
+    <script>
+      var socket = io();                                              //socket for all events
+    </script>
+    <script src="assets/events/chatMessage.js"></script>
+    <script src="assets/events/userTyping.js"></script>
+    <script src="assets/events/setupUser.js"></script>
+  </body>
+</html> 
